@@ -1,5 +1,4 @@
 import HttpStatus from 'http-status-codes';
-
 import * as userService from '../services/userService';
 
 /**
@@ -15,6 +14,7 @@ export function fetchAll(req, res, next) {
     .then(data => res.json({ data }))
     .catch(err => next(err));
 }
+
 
 /**
  * Get a user by its id.
@@ -38,11 +38,50 @@ export function fetchById(req, res, next) {
  * @param {Function} next
  */
 export function create(req, res, next) {
+
   userService
     .createUser(req.body)
-    .then(data => res.status(HttpStatus.CREATED).json({ data }))
+    .then(data => res.status(HttpStatus.CREATED).json({ message: 'user created' }))
     .catch(err => next(err));
 }
+/**
+ * Create access and refresh tokens.
+ *
+ * @param {Object} req
+ * @param {Object} res
+ * @param {Function} next
+ */
+export function getTokens(req, res, next) {
+
+  userService
+    .getUserToken(req)
+    .then(data => {
+      res.status(HttpStatus.ACCEPTED).json(data)
+    })
+    .catch(err => next(err));
+}
+
+
+/**
+ * Login a  user.
+ *
+ * @param {Object} req
+ * @param {Object} res
+ * @param {Function} next
+ */
+export function login(req, res, next) {
+
+  userService
+    .loginUser(req.body)
+    .then(data => {
+      res.status(HttpStatus.ACCEPTED).json(data)
+
+    })
+    .catch(err => {
+      next(err);
+    })
+}
+
 
 /**
  * Update a user.

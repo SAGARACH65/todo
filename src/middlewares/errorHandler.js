@@ -1,6 +1,5 @@
-import HttpStatus from 'http-status-codes';
-
 import logger from '../utils/logger';
+import HttpStatus from 'http-status-codes';
 import buildError from '../utils/buildError';
 
 /**

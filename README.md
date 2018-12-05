@@ -21,7 +21,7 @@ Comes with:
 - Code formatting using [Prettier](https://www.npmjs.com/package/prettier)
 - Configuration management using [dotenv](https://www.npmjs.com/package/dotenv)
 - Logging using [winston](https://www.npmjs.com/package/winston)
-- Error reporting using [Sentry](http://npmjs.com/package/@sentry/node)
+- Error reporting using [raven](http://npmjs.com/package/raven)
 - Tests using [mocha](https://www.npmjs.com/package/mocha), [supertest](https://www.npmjs.com/package/supertest) and [chai](https://www.npmjs.com/package/chai)
 
 ---
@@ -37,7 +37,7 @@ Comes with:
 
 Clone the repository, install the dependencies and get started right away.
 
-    $ git clone --depth=1 git@github.com:mesaugat/express-api-es6-starter.git <application-name>
+    $ git clone git@github.com:mesaugat/express-api-es6-starter.git <application-name>
     $ cd <application-name>
     $ rm -rf .git
     $ yarn   # or npm install

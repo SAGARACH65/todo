@@ -31,6 +31,28 @@ function buildError(err) {
     };
   }
 
+  if (err.isAccessTokenExpired) {
+    return {
+      code: 403,
+      message: 'access token invalid'
+    }
+  }
+
+  if (err.isRefreshTokenExpired) {
+    return {
+      code: 401,
+      message: 'refresh token invalid'
+    }
+  }
+
+  if (err.isUserNotFound) {
+    return {
+      code: 404,
+      message: 'User Not Found'
+    }
+  }
+
+
   // Return INTERNAL_SERVER_ERROR for all other cases
   return {
     code: HttpStatus.INTERNAL_SERVER_ERROR,
