@@ -10,12 +10,18 @@ export function seed(knex) {
     .then(() => {
       return knex('users').insert([
         {
-          name: 'Saugat Acharya',
-          updated_at: new Date()
+          name: 'sagar Acharya',
+          updated_at: new Date(),
+          password: 'helloworld',
+          username: 'ssa',
+          email: 'hello@gmail.com'
         },
         {
           name: 'John Doe',
-          updated_at: new Date()
+          updated_at: new Date(),
+          password: 'helloworld',
+          username: 'ssa1',
+          email: 'hello1@gmail.com'
         }
       ]);
     });
